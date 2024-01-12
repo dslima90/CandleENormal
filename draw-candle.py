@@ -32,7 +32,7 @@ plt.bar(up.index,up['l']-up['o'],stick_width,bottom=up['o'],color='green')
 plt.bar(down.index,down['l']-down['c'],stick_width,bottom=down['c'],color='red')
 
 # cria a normal com centro no último fechamento, usei um sigma arbitrario
-normal_center = list(ochl['o'])[-1] # ultimo fechamento
+normal_center = list(ochl['c'])[-1] # ultimo fechamento
 sigma = normal_center/5 # modificar com dado correto
 
 normal_x = np.arange(normal_center - 2*sigma, normal_center + 2*sigma)
