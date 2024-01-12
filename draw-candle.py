@@ -16,6 +16,8 @@ ochl = pd.DataFrame({'o': [50, 45, 41, 48, 57, 63, 62, 68],
 up = ochl[ochl['c']>=ochl['o']]
 down = ochl[ochl['c']<ochl['o']]
 
+strike = 80
+
 candle_width = .4
 stick_width = .05
 
@@ -42,6 +44,8 @@ normal_y = norm.pdf(normal_x, normal_center, sigma) * (-1) # cria a normal inver
 normal_y = (normal_y - min(normal_y))*100 + 7
 
 plt.plot(normal_y, normal_x, color="blue") 
+
+plt.axhline(strike, linestyle='--',color="brown") 
 
 #display candlestick chart
 plt.show()
